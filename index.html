@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Популярні інтерактивні ігри</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+    <header>
+ <nav>
+  <div class="nav-left">
+    <img src="src/Group 4.png" alt="icon" style="height:40px; width:auto; margin-right:18px;">
+    <span>Інтерактиви</span>
+    <span>Наша команда</span>
+    <span>Контакти</span>
+  </div>
+  <div class="nav-right">
+    <div class="theme-toggle">
+      <input type="checkbox" id="theme-switch" />
+      <label class="theme-slider" for="theme-switch">
+        <span class="theme-icon"></span>
+      </label>
+    </div>
+    <span class="user-greet">Вітаємо, User</span>
+  </div>
+</nav>
+    </header>
+    <main>
+        <h2>Популярні інтерактивні ігри</h2>
+        <section class="game-section">
+            <h3>Перевір в який рік ти народився</h3>
+            <div class="input-row">
+                <input type="number" id="birth-year" placeholder="Введіть рік народження">
+                <button id="check-year-btn" class="icon-btn">
+                    <img src="src/Frame 105.png" alt="Пошук" />
+                </button>
+            </div>
+            <span id="birth-result" class="game-result"></span>
+        </section>
+        <hr>
+        <section class="game-section">
+            <h3>Вгадай число, яке загадав комп'ютер</h3>
+            <div class="input-row">
+                <input type="number" id="guess-number" placeholder="Введіть число">
+                <button id="guess-btn" class="icon-btn">
+                    <img src="src/Frame 105.png" alt="Пошук" />
+                </button>
+            </div>
+            <span id="guess-result" class="game-result"></span>
+        </section>
+        <hr>
+        <section class="game-section">
+            <h3>Камінь - ножиці - папір</h3>
+            <div class="rps-buttons">
+                <button data-choice="rock" class="rps-btn">
+                    <img src="src/Frame 127.png" alt="Камінь" />
+                </button>
+                <button data-choice="scissors" class="rps-btn">
+                    <img src="src/Frame 126.png" alt="Ножиці" />
+                </button>
+                <button data-choice="paper" class="rps-btn">
+                    <img src="src/Frame 128.png" alt="Папір" />
+                </button>
+            </div>
+            <div class="score-row">
+                <span>Рахунок: Комп'ютер - <span id="score-comp">0</span> | Ви - <span id="score-user">0</span></span>
+            </div>
+   
+            <span id="rps-result" class="game-result"></span>
+            <button id="rps-computer-btn" class="computer-btn">Варіант комп'ютера</button>
+        </section>
+    </main>
+    <script src="src/scripts/main.js"></script>
+</body>
+</html>
