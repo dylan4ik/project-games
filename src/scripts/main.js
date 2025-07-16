@@ -92,3 +92,38 @@ themeSwitch.addEventListener('change', function() {
     body.classList.remove('dark');
   }
 });
+document.getElementById('find-max-btn').onclick = function() {
+    const n1 = Number(document.getElementById('num1').value);
+    const n2 = Number(document.getElementById('num2').value);
+    const n3 = Number(document.getElementById('num3').value);
+    if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+        document.getElementById('max-result').textContent = 'Введіть усі три числа!';
+        return;
+    }
+    const max = Math.max(n1, n2, n3);
+    document.getElementById('max-result').textContent = 'Найбільше число: ' + max;
+};
+const members = [
+    {
+        name: "Міша",
+        info: "15 років. Це наш 2 проект разом з Русланом."
+    },
+    {
+        name: "Руслан",
+        info: "15 років. Це наш 2 проект разом з Мішею."
+    }
+];
+let current = 0;
+function showMember(idx) {
+    document.getElementById('member-name').textContent = members[idx].name;
+    document.getElementById('member-info').textContent = members[idx].info;
+}
+document.getElementById('team-prev').onclick = function() {
+    current = (current - 1 + members.length) % members.length;
+    showMember(current);
+};
+document.getElementById('team-next').onclick = function() {
+    current = (current + 1) % members.length;
+    showMember(current);
+};
+showMember(current);
