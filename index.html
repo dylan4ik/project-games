@@ -1,129 +1,184 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <title>Популярні інтерактивні ігри</title>
     <link rel="stylesheet" href="src/styles/main.css">
 </head>
+
 <body>
     <header>
- <nav>
-  <div class="nav-left">
-    <img src="src/Group 4.png" alt="icon" style="height:40px; width:auto; margin-right:18px;">
-    <span>Інтерактиви</span>
-    <span>Наша команда</span>
-    <span>Контакти</span>
-  </div>
-  <div class="nav-right">
-    <div class="theme-toggle">
-      <input type="checkbox" id="theme-switch" />
-      <label class="theme-slider" for="theme-switch">
-        <span class="theme-icon"></span>
-      </label>
-    </div>
-    <span class="user-greet">Вітаємо, User</span>
-  </div>
-</nav>
-    </header>
-     <div class="content-container">
-    <main>
-        <h2>Популярні інтерактивні ігри</h2>
-        <section class="game-section">
-            <h3>Перевір в який рік ти народився</h3>
-            <div class="input-row">
-                <input type="number" id="birth-year" placeholder="Введіть рік народження">
-                <button id="check-year-btn" class="icon-btn">
-                    <img src="src/Frame 105.png" alt="Пошук" />
-                </button>
+        <nav>
+            <div class="nav-left">
+                <img src="src/Group 4.png" alt="icon" style="height:40px; width:auto; margin-right:18px;">
+                <span>Інтерактиви
+                    <button class="inter"><img src="./src/arrow.png" alt="arrow">
+
+                    </button>
+                </span>
+                <span>Наша команда</span>
+                <span>Контакти</span>
             </div>
-            <span id="birth-result" class="game-result"></span>
-        </section>
-        <hr>
-        <section class="game-section">
-            <h3>Вгадай число, яке загадав комп'ютер</h3>
-            <div class="input-row">
-                <input type="number" id="guess-number" placeholder="Введіть число">
-                <button id="guess-btn" class="icon-btn">
-                    <img src="src/Frame 105.png" alt="Пошук" />
-                </button>
-            </div>
-            <span id="guess-result" class="game-result"></span>
-        </section>
-        <hr>
-        <section class="game-section">
-            <h3>Камінь - ножиці - папір</h3>
-            <div class="rps-buttons">
-                <button data-choice="rock" class="rps-btn">
-                    <img src="src/Frame 127.png" alt="Камінь" />
-                </button>
-                <button data-choice="scissors" class="rps-btn">
-                    <img src="src/Frame 126.png" alt="Ножиці" />
-                </button>
-                <button data-choice="paper" class="rps-btn">
-                    <img src="src/Frame 128.png" alt="Папір" />
-                </button>
-            </div>
-            <div class="score-row">
-                <span>Рахунок: Комп'ютер - <span id="score-comp">0</span> | Ви - <span id="score-user">0</span></span>
-            </div>
-   
-            <span id="rps-result" class="game-result"></span>
-            <button id="rps-computer-btn" class="computer-btn">Варіант комп'ютера</button>
-        </section>
-        <hr>
-        <section class="game-section">
-            <h3>Введіть 3 числа</h3>
-            <div class="input-row">
-                <input type="number" id="num1" placeholder="Введіть число">
-                <input type="number" id="num2" placeholder="Введіть число">
-                <input type="number" id="num3" placeholder="Введіть число">
-                <button id="find-max-btn" class="icon-btn">
-                    <img src="src/Frame 105.png" alt="Пошук" />
-                </button>
-            </div>
-            <span id="max-result" class="game-result"></span>
-        </section>
-        <hr>
-        <section class="game-section">
-            <h3>Наша команда</h3>
-            <div class="team-slider">
-                <button id="team-prev" class="slider-btn">&#60;</button>
-                <div class="team-card">
-                    <div class="avatar"></div>
-                    <p id="member-name">Ім'я студента</p>
-                    <p id="member-info">Інформація про роботу, яку він/вона виконав/ла</p>
+            <div class="nav-right">
+                <div class="theme-toggle">
+                    <input type="checkbox" id="theme-switch" />
+                    <label class="theme-slider" for="theme-switch">
+                        <span class="theme-icon"></span>
+                    </label>
                 </div>
-                <button id="team-next" class="slider-btn">&#62;</button>
+                <span class="user-greet">Вітаємо, User</span>
             </div>
-        </section> 
+        </nav>
+    </header>
+    <div class="content-container">
+        <main>
+            <h2>Популярні інтерактивні ігри</h2>
+            <section class="game-section">
+                <h3>Перевір в який рік ти народився</h3>
+                <div class="input-row">
+                    <input type="number" id="birth-year" placeholder="Введіть рік народження">
+                    <button id="check-year-btn" class="icon-btn">
+                        <img src="src/Frame 105.png" alt="Пошук" />
+                    </button>
+                </div>
+                <span id="birth-result" class="game-result"></span>
+            </section>
+            <hr>
+            <section class="game-section">
+                <h3>Вгадай число, яке загадав комп'ютер</h3>
+                <div class="input-row">
+                    <input type="number" id="guess-number" placeholder="Введіть число">
+                    <button id="guess-btn" class="icon-btn">
+                        <img src="src/Frame 105.png" alt="Пошук" />
+                    </button>
+                </div>
+                <span id="guess-result" class="game-result"></span>
+            </section>
+            <hr>
+            <section class="game-section">
+                <h3>Камінь - ножиці - папір</h3>
+                <div class="rps-buttons">
+                    <button data-choice="rock" class="rps-btn">
+                        <img src="src/Frame 127.png" alt="Камінь" />
+                    </button>
+                    <button data-choice="scissors" class="rps-btn">
+                        <img src="src/Frame 126.png" alt="Ножиці" />
+                    </button>
+                    <button data-choice="paper" class="rps-btn">
+                        <img src="src/Frame 128.png" alt="Папір" />
+                    </button>
+                </div>
+                <div class="score-row">
+                    <span>Рахунок: Комп'ютер - <span id="score-comp">0</span> | Ви - <span
+                            id="score-user">0</span></span>
+                </div>
+
+                <span id="rps-result" class="game-result"></span>
+                <button id="rps-computer-btn" class="computer-btn">Варіант комп'ютера</button>
+            </section>
+            <hr>
+            <section class="game-section">
+                <h3>Введіть 3 числа</h3>
+                <div class="input-row">
+                    <input type="number" id="num1" placeholder="Введіть число">
+                    <input type="number" id="num2" placeholder="Введіть число">
+                    <input type="number" id="num3" placeholder="Введіть число">
+                    <button id="find-max-btn" class="icon-btn">
+                        <img src="src/Frame 105.png" alt="Пошук" />
+                    </button>
+                </div>
+                <span id="max-result" class="game-result"></span>
+            </section>
+            <hr>
+            <section class="game-section">
+                <h3>Наша команда</h3>
+                <div class="team-slider">
+                    <button id="team-prev" class="slider-btn">&#60;</button>
+                    <div class="team-card">
+                        <div class="avatar"></div>
+                        <p id="member-name">Ім'я студента</p>
+                        <p id="member-info">Інформація про роботу, яку він/вона виконав/ла</p>
+                    </div>
+                    <button id="team-next" class="slider-btn">&#62;</button>
+                </div>
+                <section>
+                <div class="input-wrapper">
+                    <input type="number" id="secondsInput" placeholder="Введіть число">
+                    <button onclick="calculateTime()">🔍</button>
+                </div>
+  <div class="input-wrapper">
+    <input type="number" id="secondsInput" placeholder="Введіть число">
+    <button onclick="calculateTime()"></button>
+  </div>
+            </section>
+            <h2>Футбол</h2>
+
+            <div class="field" id="field">
+                <img src="./src/ball.png">
+            </div>
+            <section>
+                <div class="container">
+                    <h2>Обери вченого/их</h2>
+                    <div class="grid">
+                        <div class="card"></div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                    <div class="buttons">
+                        <button>Які вчені народилися у 19 ст.</button>
+                        <button>Знайти рік народження Albert Einstein</button>
+                        <button>Відсортувати вчених за алфавітом</button>
+                        <button>Знайти вчених, прізвища яких починаються на на літеру “С” </button>
+                        <button>Видалити всіх вчених, ім’я яких починається на “А” </button>
+                        <button>Відсортувати вчених за кількістю прожитих років </button>
+                        <button>Знайти вченого, який народився найпізніше </button>
+                        <button>Знайти вченого, який прожив найдовше і вченого,
+                            який прожив найменше </button>
+                        <button>Знайти вченого, який прожив найдовше і вченого,
+                            який прожив найменш </button>
+                        <button>Знайти вчених, в яких співпадають перші літери імені і прізвищ</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
     </main>
     </div>
-        </main>
-</div>
-<footer class="footer">
-    <div class="footer-inner">
-        <div class="footer-left">
-            <img src="src/Group 128 1.png" alt="Coding Magic" class="footer-logo">
-            <span class="footer-brand"></span>
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <img src="src/Group 128 1.png" alt="Coding Magic" class="footer-logo">
+                <span class="footer-brand"></span>
+            </div>
+            <div class="footer-contacts">
+                <div>Тел: +38 (123) 456 78 90</div>
+                <div>E-mail: codingmagic@gmail.com</div>
+                <div>Facebook: CodingMagic</div>
+                <div>Twitter: CodingMagic</div>
+                <div>Instagram: CodingMagic</div>
+            </div>
+            <form class="footer-subscribe" onsubmit="event.preventDefault(); alert('Дякуємо за підписку!');">
+                <div class="footer-subscribe-row">
+                    <input type="email" placeholder="Ваша ел. адреса" required>
+                    <button type="submit">Підписатись</button>
+                </div>
+                <div class="footer-subscribe-note">
+                    Підписавшись, Ви зможете отримувати інформацію про новинки на сайті
+                </div>
+            </form>
         </div>
-        <div class="footer-contacts">
-            <div>Тел: +38 (123) 456 78 90</div>
-            <div>E-mail: codingmagic@gmail.com</div>
-            <div>Facebook: CodingMagic</div>
-            <div>Twitter: CodingMagic</div>
-            <div>Instagram: CodingMagic</div>
-        </div>
-   <form class="footer-subscribe" onsubmit="event.preventDefault(); alert('Дякуємо за підписку!');">
-  <div class="footer-subscribe-row">
-    <input type="email" placeholder="Ваша ел. адреса" required>
-    <button type="submit">Підписатись</button>
-  </div>
-  <div class="footer-subscribe-note">
-    Підписавшись, Ви зможете отримувати інформацію про новинки на сайті
-  </div>
-</form>
-    </div>
-</footer>
+    </footer>
     <script src="src/scripts/main.js"></script>
 </body>
+
 </html>

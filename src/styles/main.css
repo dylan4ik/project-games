@@ -389,3 +389,101 @@ header nav {
     margin-top: 4px;
     margin-left: 2px;
 }
+
+
+
+
+h2 {
+    margin-bottom: 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+    margin-bottom: 40px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background: #ddd;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+button {
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 16px;
+    max-width: 300px;
+    flex: 1 1 auto;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #444;
+}
+
+#toggle {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.modal {
+  width: 120px;
+  border: 1px solid #000;
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+  font-family: sans-serif;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+
+.option {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.option:hover {
+  background-color: #eee;
+}
+
+.option.selected {
+  background-color: #ddd;
+}
+
+.hidden {
+  display: none;
+}
+
+.inter {
+    background-color: #fff;
+}
+
+.field {
+    width: 600px;
+    height: 200px;
+    background: #5dbb63;
+    border: 2px solid black;
+    border-radius: 30px;
+    margin: 20px auto;
+    position: relative;
+    cursor: pointer;
+}
+

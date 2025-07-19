@@ -127,3 +127,24 @@ document.getElementById('team-next').onclick = function() {
     showMember(current);
 };
 showMember(current);
+
+ const toggle = document.getElementById('toggle');
+  const modal = document.getElementById('modal');
+  const options = document.querySelectorAll('.option');
+
+  
+  toggle.addEventListener('click', () => {
+    modal.classList.toggle('hidden');
+  });
+
+  
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      options.forEach(o => o.classList.remove('selected'));
+      option.classList.add('selected');
+      modal.classList.add('hidden'); 
+      console.log("выбрано:", option.dataset.value);
+    });
+  });
+
+
