@@ -1,150 +1,97 @@
 
+
 document.getElementById('check-year-btn').onclick = function() {
     const year = document.getElementById('birth-year').value;
     const result = document.getElementById('birth-result');
-    if (!year) {
-        result.textContent = 'Введіть рік!';
-        result.style.color = 'red';
-        return;
-    }
+    
     if (year >= 2000) {
-        result.textContent = 'Ви народилися у високосний рік!';
-        result.style.color = 'green';
+        result.textContent = 'Ви народилися у високосному році!';
     } else {
-        result.textContent = 'Ви народилися у звичайний рік!';
-        result.style.color = 'green';
+        result.textContent = 'Ви народилися у звичайному році!';
     }
 };
 
 
-let secretNumber = Math.floor(Math.random() * 100) + 1;
+let secretNumber = Math.floor(Math.random() * 10) + 1; 
+
 document.getElementById('guess-btn').onclick = function() {
     const guess = Number(document.getElementById('guess-number').value);
     const result = document.getElementById('guess-result');
-    if (!guess) {
-        result.textContent = 'Введіть число!';
-        result.style.color = 'red';
-        return;
-    }
+    
     if (guess === secretNumber) {
-        result.textContent = 'Вітаю, ви вгадали число! (number)';
-        result.style.color = 'green';
-        secretNumber = Math.floor(Math.random() * 100) + 1;
+        result.textContent = 'Вітаю! Ви вгадали!';
+        secretNumber = Math.floor(Math.random() * 10) + 1; 
     } else if (guess < secretNumber) {
-        result.textContent = 'Спробуйте більше!';
-        result.style.color = 'orange';
+        result.textContent = 'Більше!';
     } else {
-        result.textContent = 'Спробуйте менше!';
-        result.style.color = 'orange';
+        result.textContent = 'Менше!';
     }
 };
 
 
-let userScore = 0;
-let compScore = 0;
-const choices = ['rock', 'scissors', 'paper'];
-const icons = {
-    rock: 'Камінь',
-    scissors: 'Ножиці',
-    paper: 'Папір'
-};
-
-document.querySelectorAll('.rps-btn').forEach(btn => {
-    btn.onclick = function() {
-        playRPS(btn.dataset.choice);
-    };
-});
-
-document.getElementById('rps-computer-btn').onclick = function() {
-    const compChoice = choices[Math.floor(Math.random() * 3)];
-    document.getElementById('rps-result').textContent = `Варіант комп'ютера: ${icons[compChoice]}`;
-    document.getElementById('rps-result').style.color = '#2196f3';
-};
-
-function playRPS(userChoice) {
-    const compChoice = choices[Math.floor(Math.random() * 3)];
-    let result = '';
-    if (userChoice === compChoice) {
-        result = 'Нічия!';
-    } else if (
-        (userChoice === 'rock' && compChoice === 'scissors') ||
-        (userChoice === 'scissors' && compChoice === 'paper') ||
-        (userChoice === 'paper' && compChoice === 'rock')
-    ) {
-        result = 'Ви виграли раунд!';
-        userScore++;
-    } else {
-        result = 'Комп\'ютер виграв раунд!';
-        compScore++;
-    }
-    document.getElementById('score-user').textContent = userScore;
-    document.getElementById('score-comp').textContent = compScore;
-    document.getElementById('rps-result').textContent = result;
-    document.getElementById('rps-result').style.color = result.includes('виграли') ? 'green' : (result === 'Нічия!' ? '#888' : 'red');
-}
-const themeSwitch = document.getElementById('theme-switch');
-const body = document.body;
-
-themeSwitch.addEventListener('change', function() {
-  if (this.checked) {
-    body.classList.add('dark');
-  } else {
-    body.classList.remove('dark');
-  }
-});
 document.getElementById('find-max-btn').onclick = function() {
     const n1 = Number(document.getElementById('num1').value);
     const n2 = Number(document.getElementById('num2').value);
     const n3 = Number(document.getElementById('num3').value);
-    if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
-        document.getElementById('max-result').textContent = 'Введіть усі три числа!';
-        return;
-    }
-    const max = Math.max(n1, n2, n3);
-    document.getElementById('max-result').textContent = 'Найбільше число: ' + max;
+    
+    let max = n1;
+    if (n2 > max) max = n2;
+    if (n3 > max) max = n3;
+    
+    document.getElementById('max-result').textContent = 'Найбільше: ' + max;
 };
+let userScore = 0;
+let compScore = 0;
+
+document.querySelectorAll('.rps-btn').forEach(function(btn) {
+    btn.onclick = function() {
+        const userChoice = btn.dataset.choice; 
+        const choices = ['rock', 'scissors', 'paper'];
+        const compChoice = choices[Math.floor(Math.random() * 3)];
+        
+        let result = '';
+        
+      
+        if (userChoice === compChoice) {
+            result = 'Нічия!';
+        } else if (
+            (userChoice === 'rock' && compChoice === 'scissors') ||
+            (userChoice === 'scissors' && compChoice === 'paper') ||
+            (userChoice === 'paper' && compChoice === 'rock')
+        ) {
+            result = 'Ви виграли!';
+            userScore++;
+        } else {
+            result = 'Комп\'ютер виграв!';
+            compScore++;
+        }
+        
+      
+        document.getElementById('rps-result').textContent = 
+            `Ви: ${userChoice}, Комп\'ютер: ${compChoice}. ${result}`;
+        
+
+        document.getElementById('score-user').textContent = userScore;
+        document.getElementById('score-comp').textContent = compScore;
+    };
+});
+
+
 const members = [
-    {
-        name: "Міша",
-        info: "15 років. Це наш 2 проект разом з Русланом."
-    },
-    {
-        name: "Руслан",
-        info: "15 років. Це наш 2 проект разом з Мішею."
-    }
+    { name: "Міша", info: "15 років", photo: "src/міша.jpg" },
+    { name: "Руслан", info: "15 років", photo: "src/руслан.jpg" }
 ];
+
 let current = 0;
-function showMember(idx) {
-    document.getElementById('member-name').textContent = members[idx].name;
-    document.getElementById('member-info').textContent = members[idx].info;
-}
+
 document.getElementById('team-prev').onclick = function() {
-    current = (current - 1 + members.length) % members.length;
-    showMember(current);
+    current = current - 1;
+    if (current < 0) current = members.length - 1;
+    showMember();
 };
+
 document.getElementById('team-next').onclick = function() {
     current = (current + 1) % members.length;
     showMember(current);
 };
 showMember(current);
-
- const toggle = document.getElementById('toggle');
-  const modal = document.getElementById('modal');
-  const options = document.querySelectorAll('.option');
-
-  
-  toggle.addEventListener('click', () => {
-    modal.classList.toggle('hidden');
-  });
-
-  
-  options.forEach(option => {
-    option.addEventListener('click', () => {
-      options.forEach(o => o.classList.remove('selected'));
-      option.classList.add('selected');
-      modal.classList.add('hidden'); 
-      console.log("выбрано:", option.dataset.value);
-    });
-  });
-
-
