@@ -106,17 +106,20 @@ document.getElementById('find-max-btn').onclick = function() {
 const members = [
     {
         name: "Міша",
-        info: "15 років. Це наш 2 проект разом з Русланом."
+        info: "15 років. Це наш 2 проект разом з Русланом.",
+        photo: "src/міша.jpg"
     },
     {
         name: "Руслан",
-        info: "15 років. Це наш 2 проект разом з Мішею."
+        info: "15 років. Це наш 2 проект разом з Мішею.",
+        photo: "src/руслан.jpg"
     }
 ];
 let current = 0;
 function showMember(idx) {
     document.getElementById('member-name').textContent = members[idx].name;
     document.getElementById('member-info').textContent = members[idx].info;
+    document.getElementById('member-photo').src = members[idx].photo;
 }
 document.getElementById('team-prev').onclick = function() {
     current = (current - 1 + members.length) % members.length;

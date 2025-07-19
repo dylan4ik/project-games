@@ -9,6 +9,7 @@ body {
     margin: 0;
     min-height: 100vh;
 }
+
 header {
     width: 100vw;
     background: #fff;
@@ -18,18 +19,21 @@ header {
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    margin-bottom: 0;
 }
+
 header nav {
     max-width: 900px;
     margin: 0 auto;
     background: transparent;
     padding: 18px 40px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: none;
     font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .user-greet {
     margin-left: auto;
     color: #2196f3;
@@ -37,12 +41,18 @@ header nav {
 }
 
 main {
-    max-width: 600px;
-    margin: 40px auto;
-    background: none;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 0;
+    max-width: 1000px; 
+    margin: 0 auto;
+    margin-top: 0; 
+    background: #fff;
+    border-radius: 0; 
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: none; 
+    padding: 40px 60px;
+    min-height: calc(100vh - 140px); 
 }
 
 h2, h3 {
@@ -65,8 +75,10 @@ h2 {
 .input-row {
     display: flex;
     align-items: center;
-    gap: 0;
+    justify-content: center;
+    gap: 10px;
     margin-bottom: 8px;
+    flex-wrap: wrap;
 }
 
 input[type="number"], input[type="text"] {
@@ -76,9 +88,10 @@ input[type="number"], input[type="text"] {
     background: #d1d1d1;
     font-size: 16px;
     color: #888;
-    width: 180px;
+    width: 160px;
     outline: none;
     font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    margin: 5px;
 }
 input[type="number"]::placeholder {
     color: #888;
@@ -100,9 +113,11 @@ input[type="number"]::placeholder {
     cursor: pointer;
     transition: background 0.2s;
 }
+
 .icon-btn:active {
     background: #444;
 }
+
 .icon-btn img {
     width: 22px;
     height: 22px;
@@ -115,6 +130,7 @@ input[type="number"]::placeholder {
     gap: 18px;
     margin-bottom: 10px;
 }
+
 .rps-btn {
     background: #000;
     border: none;
@@ -126,12 +142,18 @@ input[type="number"]::placeholder {
     justify-content: center;
     cursor: pointer;
     transition: background 0.2s;
+}
+
+.rps-btn:hover {
+    background: #333;
     box-shadow: 0 0 0 2px #fff;
     padding: 0;
 }
+
 .rps-btn:active {
     background: #2196f3;
 }
+
 .rps-btn img {
     width: 38px;
     height: 38px;
@@ -150,119 +172,36 @@ input[type="number"]::placeholder {
     transition: background 0.2s;
     font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 }
-.computer-btn:active {
-    background: #2196f3;
+
+.computer-btn:hover {
+    background: #333;
 }
 
 .score-row {
-    margin-bottom: 8px;
+    margin: 18px 0;
     font-size: 18px;
-    color: #222;
+    color: #333;
+}
+
+#score-comp, #score-user {
+    color: #2196f3;
+    font-weight: bold;
 }
 
 .game-result {
-    display: block;
-    margin-top: 10px;
-    font-size: 17px;
-    min-height: 24px;
-    font-weight: 500;
-    transition: color 0.2s;
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px;
 }
 
 hr {
-    margin: 28px 0;
     border: none;
-    border-top: 1px solid #bdbdbd;
+    border-top: 1px solid #ddd;
+    margin: 32px 0;
 }
 
-
-header nav {
-    background: #fff;
-    padding: 18px 40px;
-    border-bottom: 1px solid #e0e0e0;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav-left {
-    display: flex;
-    gap: 32px;
-    align-items: center;
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 28px; 
-}
-
-.theme-toggle {
-    display: flex;
-    align-items: center;
-    margin-right: 0;
-    margin-left: 0;
-}
-
-.theme-toggle input[type="checkbox"] {
-    display: none;
-}
-
-.theme-slider {
-    width: 48px;
-    height: 24px;
-    background: #bdbdbd;
-    border-radius: 12px;
-    position: relative;
-    transition: background 0.2s;
-}
-
-.theme-slider::before {
-    content: '';
-    position: absolute;
-    left: 2px;
-    top: 2px;
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    border-radius: 50%;
-    transition: left 0.2s;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
-}
-
-.theme-toggle input:checked + .theme-slider {
-    background: #222;
-}
-
-.theme-toggle input:checked + .theme-slider::before {
-    left: 26px;
-    background: #000;
-}
-
-.theme-icon {
-    position: absolute;
-    left: 6px;
-    top: 6px;
-    width: 12px;
-    height: 12px;
-    pointer-events: none;
-    background: url('../sun.png') no-repeat center/contain;
-    transition: background 0.2s;
-}
-.dark .theme-icon {
-    background: url('../moon.png') no-repeat center/contain;
-}
-.nav-left span,
-.user-greet {
-    color: #222; 
-    font-weight: 500;
-    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-    font-size: 18px;
-    user-select: none;
-    pointer-events: none;
-    transition: color 0.2s;
-}
 .team-slider {
     display: flex;
     align-items: center;
@@ -270,122 +209,298 @@ header nav {
     gap: 20px;
     margin-top: 20px;
 }
-.team-card {
-    background: none;   
-    border-radius: 16px;
-    padding: 20px;
-    text-align: center;
-    width: 160px;
-}
 
 .slider-btn {
-    font-size: 2rem;
-    background: none;
+    background: #000;
+    color: #fff;
     border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
-    padding: 0 10px;
-}
-.content-container {
-    max-width: 900px;
-    margin: 0 auto;       
-    background: #fff;
-    border-radius: 24px;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
-    padding: 40px 24px;
-}
-.avatar {
-    width: 110px;      
-    height: 110px;     
-    background: #ccc;
-    border-radius: 24px;
-    margin: 0 auto 10px;
-}
-.footer {
-    width: 100vw;               
-    max-width: none;             
-    margin: 0;                  
-    background: #fff;
-    border-top: 1px solid #e0e0e0;
-    border-radius: 0;           
-    padding: 32px 0;
-    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-    font-size: 16px;
-    display: flex;
-    justify-content: center;   
-    align-items: flex-start;
-    gap: 40px;
-    box-sizing: border-box;
-}
-
-.footer-left {
+    font-size: 20px;
     display: flex;
     align-items: center;
-    gap: 14px;
+    justify-content: center;
+    transition: background 0.2s;
 }
 
-.footer-logo {
-    height: 48px;
-    width: auto;
+.slider-btn:hover {
+    background: #333;
 }
 
-.footer-brand {
-    font-size: 22px;
-    font-weight: 600;
-    color: #222;
-    letter-spacing: 1px;
+.team-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
 }
 
-.footer-contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    color: #222;
-    font-size: 15px;
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
 }
+
+#member-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#member-info {
+    color: #666;
+    font-size: 14px;
+}
+
+.footer {
+    background: #fff;
+    color: #333;
+    padding: 40px 0;
+    margin-top: 0; 
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+
 .footer-inner {
-    width: 100%;
     max-width: 900px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 40px;
+    padding: 0 40px;
+    flex-wrap: wrap;
+    gap: 30px;
 }
-.footer-subscribe {
+
+.footer-left {
     display: flex;
-    flex-direction: column; 
-    gap: 4px;
-    align-items: flex-start; 
+    align-items: center;
+    gap: 15px;
 }
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+}
+
+.footer-brand {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-contacts div {
+    color: #666;
+    font-size: 14px;
+}
+
+.footer-subscribe {
+    max-width: 250px;
+}
+
 .footer-subscribe-row {
     display: flex;
-    flex-direction: row;
     gap: 8px;
-    align-items: center;
+    margin-bottom: 10px;
 }
-.footer-subscribe input[type="email"] {
-    padding: 8px 14px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    font-size: 15px;
-    outline: none;
+
+.footer-subscribe input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    color: #333;
+    font-size: 14px;
 }
+
+.footer-subscribe input::placeholder {
+    color: #999;
+}
+
 .footer-subscribe button {
-    padding: 8px 18px;
-    border-radius: 20px;
-    border: none;
-    background: #000;      
+    background: #000;
     color: #fff;
-    font-size: 15px;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 14px;
     transition: background 0.2s;
 }
+
 .footer-subscribe button:hover {
-    background: #222;     
+    background: #333;
 }
+
 .footer-subscribe-note {
     font-size: 12px;
-    color: #666;
-    margin-top: 4px;
-    margin-left: 2px;
+    color: #999;
+    line-height: 1.4;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-left span {
+    color: #333;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.nav-left span:hover {
+    color: #2196f3;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.theme-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.theme-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.theme-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .theme-slider {
+    background-color: #2196f3;
+}
+
+input:checked + .theme-slider:before {
+    transform: translateX(26px);
+}
+
+.theme-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+}
+
+body.dark {
+    background: #222;
+    color: #fff;
+}
+
+body.dark header {
+    background: #333;
+}
+
+body.dark header nav {
+    border-bottom-color: #555;
+}
+
+body.dark main {
+    background: #444;
+    color: #fff;
+}
+
+body.dark .nav-left span {
+    color: #fff;
+}
+
+body.dark .nav-left span:hover {
+    color: #2196f3;
+}
+
+body.dark .user-greet {
+    color: #2196f3;
+}
+
+body.dark .team-card {
+    background: #555;
+    color: #fff;
+}
+
+body.dark #member-name {
+    color: #fff;
+}
+
+body.dark #member-info {
+    color: #ccc;
+}
+
+body.dark input[type="number"], body.dark input[type="text"] {
+    background: #666;
+    color: #fff;
+}
+
+body.dark input[type="number"]::placeholder {
+    color: #ccc;
+}
+
+body.dark .footer {
+    background: #333;
+    color: #fff;
+}
+
+body.dark .footer-contacts div {
+    color: #ccc;
+}
+
+body.dark .footer-subscribe input {
+    background: #444;
+    color: #fff;
+    border-color: #555;
+}
+
+body.dark .footer-subscribe input::placeholder {
+    color: #aaa;
+}
+
+body.dark .footer-subscribe-note {
+    color: #aaa;
+}
+
+.content-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
