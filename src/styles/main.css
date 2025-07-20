@@ -111,7 +111,7 @@ input[type="number"]::placeholder {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: 0.2s;
 }
 
 .icon-btn:active {
@@ -141,7 +141,7 @@ input[type="number"]::placeholder {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: 0.2s;
 }
 
 .rps-btn:hover {
@@ -169,7 +169,7 @@ input[type="number"]::placeholder {
     padding: 8px 28px;
     font-size: 17px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: 0.2s;
     font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 }
 
@@ -222,7 +222,7 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s;
+    transition: 0.2s;
 }
 
 .slider-btn:hover {
@@ -336,7 +336,7 @@ hr {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    transition: background 0.2s;
+    transition: 0.2s;
 }
 
 .footer-subscribe button:hover {
@@ -432,21 +432,27 @@ button:hover {
   display: none;
 }
 
-.inter {
-    background-color: #fff;
-}
+
 
 .field {
     width: 600px;
-    height: 200px;
-    background: #5dbb63;
-    border: 2px solid black;
-    border-radius: 30px;
+    height: 300px;
+    background: #66bb6a;
+    border: 2px solid #000;
+    border-radius: 20px;
     margin: 20px auto;
     position: relative;
-    cursor: pointer;
 }
 
+ .ball {
+            width: 50px;
+            height: 50px;
+            background: url('src/.ball.png') no-repeat center/cover;
+            position: absolute;
+            top: 125px;
+            left: 275px;
+            cursor: grab;
+        }
 
 .nav-left {
     display: flex;
@@ -603,3 +609,135 @@ body.dark .footer-subscribe-note {
     margin: 0 auto;
     padding: 0 20px;
 }
+
+
+ .input-wrapper {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+  }
+
+  input {
+    border: none;
+    padding: 15px;
+    width: 200px;
+    font-size: 16px;
+    outline: none;
+  }
+
+  button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  .result {
+    margin-top: 25px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+  }
+
+.interactive-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-item {
+  cursor: pointer;
+  user-select: none;
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 5px;
+  transition: transform 0.2s ease;
+}
+
+.rotate .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid black;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dropdown-menu div {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+  
+
+
+.game {
+  position: relative;
+  width: 600px;
+  height: 150px;
+  border: 2px solid black;
+  overflow: hidden;
+  background-color: #f7f7f7;
+}
+
+#dino {
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+}
+
+#cactus {
+  position: absolute;
+  bottom: 0;
+  right: -20px;
+  width: 20px;
+  height: 40px;
+  background-color: green;
+  animation: moveCactus 2s linear infinite;
+}
+
+@keyframes moveCactus {
+  0% {
+    right: -20px;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+.jump {
+  animation: jump 0.4s ease-out;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 80px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+  

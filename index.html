@@ -4,34 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Популярні інтерактивні ігри</title>
-    
+
     <link rel="stylesheet" href="src/styles/main.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="nav-left">
-                <img src="src/Group 4.png" alt="icon" style="height:40px; width:auto; margin-right:18px;">
-                <span>Інтерактиви
-                    <button class="inter"><img src="./src/arrow.png" alt="arrow">
+<header>
+  <nav>
+    <div class="nav-left">
+      <img src="src/Group 4.png" alt="icon" style="height:40px; width:auto; margin-right:18px;">
+      
+      <div class="interactive-dropdown">
+        <span id="interactiveToggle" class="nav-item">
+          Інтерактиви <span class="arrow" ></span>
+        </span>
 
-                    </button>
-                </span>
-                <span>Наша команда</span>
-                <span>Контакти</span>
-            </div>
-            <div class="nav-right">
-                <div class="theme-toggle">
-                    <input type="checkbox" id="theme-switch" />
-                    <label class="theme-slider" for="theme-switch">
-                        <span class="theme-icon"></span>
-                    </label>
-                </div>
-                <span class="user-greet">Вітаємо, User</span>
-            </div>
-        </nav>
-    </header>
+        
+        <div id="interactiveMenu" class="dropdown-menu hidden">
+          <div>Числовий</div>
+          <div>Ігровий</div>
+          <div>Ознайомчий</div>
+        </div>
+      </div>
+
+      <span>Наша команда</span>
+      <span>Контакти</span>
+    </div>
+
+    <div class="nav-right">
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" />
+        <label class="theme-slider" for="theme-switch">
+          <span class="theme-icon"></span>
+        </label>
+      </div>
+      <span class="user-greet">Вітаємо, User</span>
+    </div>
+  </nav>
+</header>
     <div class="content-container">
         <main>
             <h2>Популярні інтерактивні ігри</h2>
@@ -100,58 +110,68 @@
                         <img id="member-photo" class="avatar" src="src/міша.jpg" alt="Фото учасника">
                         <p id="member-name">Ім'я студента</p>
                         <p id="member-info">Інформація про роботу, яку він/вона виконав/ла</p>
-         <p id="team-project-note" style="color: #666; font-size:14px; margin-top:10px;">Це наш другий проект разом</p>          
+                        <p id="team-project-note" style="color: #666; font-size:14px; margin-top:10px;">Це наш другий
+                            проект разом</p>
                     </div>
                     <button id="team-next" class="slider-btn">&#62;</button>
                 </div>
+                <hr>
                 <section>
-                <div class="input-wrapper">
-                    <input type="number" id="secondsInput" placeholder="Введіть число">
-                    <button onclick="calculateTime()">🔍</button>
-                </div>
-  <div class="input-wrapper">
-    <input type="number" id="secondsInput" placeholder="Введіть число">
-    <button onclick="calculateTime()"></button>
-  </div>
-            </section>
-            <h2>Футбол</h2>
+                        <h2>Калькулятор часу</h2>
 
-            <div class="field" id="field">
-                <img src="./src/ball.png">
-            </div>
-            <section>
-                <div class="container">
-                    <h2>Обери вченого/их</h2>
-                    <div class="grid">
-                        <div class="card"></div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                        <div class="card"></div>
+                        <div class="input-wrapper">
+                            <input type="number" id="secondsInput" placeholder="Введіть число">
+                            <button onclick="calculateTime()"><img src="./src/" alt=""></button>
+                        </div>
+                        <div class="result" id="result"></div>
+                    </section>
+                     <hr>
+                    <section>
+                        <div class="game">
+  <div id="dino"></div>
+  <div id="cactus"></div>
+</div>
+                    </section>
+              <section>
+                <h2>Футбол</h2>
+<div class="field" id="field">
+    <div class="ball" id="ball"></div>
+</div>
+              </section>
+                  <hr>
+                <section>
+                    <div class="container">
+                        <h2>Обери вченого/их</h2>
+                        <div class="grid">
+                            <div class="card"></div>
+                            <div class="card"></div>
+                            <div class="card"></div>
+                            <div class="card"></div>
+                            <div class="card"></div>
+                            <div class="card"></div>
+                            <div class="card"></div>
+                            <div class="card"></div>
+                            <div class="card"></div>
+                            <div class="card"></div>
+                            <div class="card"></div>
+                            <div class="card"></div>
+                        </div>
+                        <div class="buttons">
+                            <button>Які вчені народилися у 19 ст.</button>
+                            <button>Знайти рік народження Albert Einstein</button>
+                            <button>Відсортувати вчених за алфавітом</button>
+                            <button>Знайти вчених, прізвища яких починаються на на літеру “С” </button>
+                            <button>Видалити всіх вчених, ім’я яких починається на “А” </button>
+                            <button>Відсортувати вчених за кількістю прожитих років </button>
+                            <button>Знайти вченого, який народився найпізніше </button>
+                            <button>Знайти вченого, який прожив найдовше і вченого,
+                                який прожив найменше </button>
+                            <button>Знайти вченого, який прожив найдовше і вченого,
+                                який прожив найменш </button>
+                            <button>Знайти вчених, в яких співпадають перші літери імені і прізвищ</button>
+                        </div>
                     </div>
-                    <div class="buttons">
-                        <button>Які вчені народилися у 19 ст.</button>
-                        <button>Знайти рік народження Albert Einstein</button>
-                        <button>Відсортувати вчених за алфавітом</button>
-                        <button>Знайти вчених, прізвища яких починаються на на літеру “С” </button>
-                        <button>Видалити всіх вчених, ім’я яких починається на “А” </button>
-                        <button>Відсортувати вчених за кількістю прожитих років </button>
-                        <button>Знайти вченого, який народився найпізніше </button>
-                        <button>Знайти вченого, який прожив найдовше і вченого,
-                            який прожив найменше </button>
-                        <button>Знайти вченого, який прожив найдовше і вченого,
-                            який прожив найменш </button>
-                        <button>Знайти вчених, в яких співпадають перші літери імені і прізвищ</button>
-                    </div>
-                </div>
-            </section>
+                </section>
         </main>
     </div>
     </main>
@@ -181,6 +201,7 @@
         </div>
     </footer>
     <script src="src/scripts/main.js"></script>
+
 </body>
 
 </html>

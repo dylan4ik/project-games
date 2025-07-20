@@ -95,3 +95,102 @@ document.getElementById('team-next').onclick = function() {
     showMember(current);
 };
 showMember(current);
+
+function calculateTime() {
+    const seconds = parseInt(document.getElementById('secondsInput').value);
+    if (isNaN(seconds) || seconds < 0) {
+        document.getElementById('result').innerText = 'Введіть коректне число';
+        return;
+    }
+
+    const days = Math.floor(seconds / (24 * 3600));
+    const hours = Math.floor((seconds % (24 * 3600)) / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+
+    document.getElementById('result').innerText = `${days} дн. ${hours}:${minutes.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("interactiveToggle");
+  const menu = document.getElementById("interactiveMenu");
+
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    menu.classList.toggle("hidden");
+    toggle.classList.toggle("rotate");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".interactive-dropdown")) {
+      menu.classList.add("hidden");
+      toggle.classList.remove("rotate");
+    }
+  });
+});
+
+const dino = document.getElementById("dino");
+const cactus = document.getElementById("cactus");
+
+document.addEventListener("keydown", function (event) {
+  if (event.code === "Space") {
+    if (!dino.classList.contains("jump")) {
+      dino.classList.add("jump");
+
+      setTimeout(() => {
+        dino.classList.remove("jump");
+      }, 400);
+    }
+  }
+});
+
+// Проверка на столкновение
+let isAlive = setInterval(function () {
+  let dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue("top"));
+  let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
+
+  if (cactusLeft < 90 && cactusLeft > 50 && dinoTop > 110) {
+    alert("Гру завершено!");
+    cactus.style.animation = "none";
+    cactus.style.display = "none";
+  }
+}, 10);
+
+const ball = document.getElementById('ball');
+const field = document.getElementById('field');
+
+ball.onmousedown = function(event) {
+    event.preventDefault();
+    let shiftX = event.clientX - ball.getBoundingClientRect().left;
+    let shiftY = event.clientY - ball.getBoundingClientRect().top;
+
+    function moveAt(pageX, pageY) {
+        let fieldRect = field.getBoundingClientRect();
+
+        let newLeft = pageX - shiftX - fieldRect.left;
+        let newTop = pageY - shiftY - fieldRect.top;
+
+        // Ограничения внутри поля
+        newLeft = Math.max(0, Math.min(newLeft, field.clientWidth - ball.clientWidth));
+        newTop = Math.max(0, Math.min(newTop, field.clientHeight - ball.clientHeight));
+
+        ball.style.left = newLeft + 'px';
+        ball.style.top = newTop + 'px';
+    }
+
+    function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+    }
+
+    document.addEventListener('mousemove', onMouseMove);
+
+    document.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        document.onmouseup = null;
+    };
+};
+
+ball.ondragstart = function() {
+    return false;
+};
